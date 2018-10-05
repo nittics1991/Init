@@ -4,7 +4,8 @@ use Concerto\container\provider\AbstractServiceProvider;
 use Concerto\http\Emitter;
 use Concerto\http\MiddlewareHandler;
 
-class DefaultConfigProvider extends AbstractServiceProvider
+class DefaultConfigProvider extends AbstractServiceProvider implements
+    BootableServiceProviderInterface
 {
     protected $provides = [
         'error.exception',
@@ -14,7 +15,7 @@ class DefaultConfigProvider extends AbstractServiceProvider
         'Concerto\http\MiddlewareInterface',
         'Concerto\http\EmitterInterface',
     ];
-
+    
     public function register()
     {
         $this->share('error.exception', function ($container) {
@@ -49,6 +50,13 @@ class DefaultConfigProvider extends AbstractServiceProvider
         $this->share('Concerto\http\EmitterInterface', function ($container) {
             return new Emitter();
         });
+        
+        
+        
+    }
+    
+    public function boot()
+    {
         
         
         

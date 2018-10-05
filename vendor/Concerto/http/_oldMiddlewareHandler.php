@@ -41,22 +41,6 @@ class MiddlewareHandler implements MiddlewareInterface
         ServerRequestInterface $request
         ResponceInterface $responce = null
     ) {
-        
-        
-        //containerからmiddleware定義を持ってくるか?
-        
-        
-        foreach ($middlewares as $x) {
-            
-            //frameworkではaddの定義は色々
-            //interfaceで定義必要
-            
-            $x->add($x);
-            
-        }
-        
-        
-        
         if ($this->middleware instanceof HandleInterface) {
             return $this->middleware->handle($request);
         }

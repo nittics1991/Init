@@ -1,0 +1,11 @@
+
+
+MiddlewareHandlerでinjectしたmiddleware frameworkにmiddlewareを設定する処理が必要
+
+どこかでmiddlewareを定義、実行する
+
+providerのbootでできるか?
+
+
+
+
